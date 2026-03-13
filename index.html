@@ -43,7 +43,48 @@
     pointer-events: none;
     z-index: 1000;
   }
+.terminal-box{
+background:#000;
+border:1px solid var(--border);
+padding:20px;
+font-family:'Share Tech Mono', monospace;
+color:#00ff88;
+max-width:700px;
+margin:auto;
+height:300px;
+display:flex;
+flex-direction:column;
+}
 
+#terminal-output{
+flex:1;
+overflow-y:auto;
+margin-bottom:10px;
+}
+
+.cmd{
+color:var(--cyan);
+}
+
+.terminal-input-line{
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.prompt{
+color:var(--green);
+}
+
+#terminal-input{
+flex:1;
+background:transparent;
+border:none;
+outline:none;
+color:#00ff88;
+font-family:'Share Tech Mono', monospace;
+font-size:14px;
+}
   #matrix-canvas {
     position: fixed;
     top: 0; left: 0;
@@ -592,7 +633,26 @@
     letter-spacing: 1px;
     transition: all 0.3s;
   }
+  
+.cert-link{
+color: var(--cyan);
+text-decoration: none;
+font-family: 'Share Tech Mono', monospace;
+font-size: 0.7rem;
+letter-spacing: 1px;
+display: inline-block;
+margin-top: 6px;
+transition: all 0.2s ease;
+}
 
+.cert-link:hover{
+color: var(--green);
+text-shadow: 0 0 8px var(--green);
+}
+
+.cert-link:visited{
+color: var(--cyan);
+}
   .contact-link:hover { color: var(--green); border-color: var(--green); box-shadow: var(--glow); background: rgba(0,255,136,0.05); }
 
   footer {
@@ -653,20 +713,20 @@
     </div>
     <div class="stats-bar">
       <div class="stat-item">
-        <div class="stat-num" data-count="50">0</div>
-        <div class="stat-label">VULNS FOUND</div>
+        <div class="stat-num" data-count="300">0</div>
+        <div class="stat-label">Rooms Completed</div>
       </div>
       <div class="stat-item">
         <div class="stat-num" data-count="30">0</div>
-        <div class="stat-label">PENTESTS DONE</div>
+        <div class="stat-label">Security Badges Earned</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-count="200">0</div>
-        <div class="stat-label">ALERTS TRIAGED</div>
+        <div class="stat-num" data-count="100">0</div>
+        <div class="stat-label">Vulnerabilities Identified</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-count="5">0</div>
-        <div class="stat-label">YEARS EXP.</div>
+        <div class="stat-num" data-count="4200" data-plus="false">0</div>
+        <div class="stat-label">TryHackMe Global Rank</div>
       </div>
     </div>
   </div>
@@ -872,6 +932,7 @@
     </div>
   </div>
 </section>
+
 <section id="tools">
   <div class="container">
 
@@ -885,7 +946,7 @@
 
       <div class="tool-card"><div class="tool-icon">🕵️</div><div class="tool-name">Nmap</div><div class="tool-cat">NETWORK RECON</div></div>
 
-      <div class="tool-card"><div class="tool-icon">🔍</div><div class="tool-name">Burp Suite Pro</div><div class="tool-cat">WEB SECURITY</div></div>
+      <div class="tool-card"><div class="tool-icon">🔍</div><div class="tool-name">Burp Suite</div><div class="tool-cat">WEB SECURITY</div></div>
 
       <div class="tool-card"><div class="tool-icon">🗄️</div><div class="tool-name">SQLmap</div><div class="tool-cat">SQL INJECTION</div></div>
 
@@ -911,23 +972,7 @@
 
       <div class="tool-card"><div class="tool-icon">🐉</div><div class="tool-name">Kali Linux</div><div class="tool-cat">PENTEST PLATFORM</div></div>
 
-      <div class="tool-card"><div class="tool-icon">🐧</div><div class="tool-name">Linux (Ubuntu)</div><div class="tool-cat">OPERATING SYSTEM</div></div>
-
-      <div class="tool-card"><div class="tool-icon">🌍</div><div class="tool-name">Web App Pentesting</div><div class="tool-cat">APPLICATION SECURITY</div></div>
-
-      <div class="tool-card"><div class="tool-icon">🔗</div><div class="tool-name">API Security Testing</div><div class="tool-cat">APPLICATION SECURITY</div></div>
-
-      <div class="tool-card"><div class="tool-icon">🛡️</div><div class="tool-name">OWASP Top 10</div><div class="tool-cat">WEB SECURITY</div></div>
-
-      <div class="tool-card"><div class="tool-icon">🔐</div><div class="tool-name">Auth & Authorization</div><div class="tool-cat">SECURITY DESIGN</div></div>
-
-      <div class="tool-card"><div class="tool-icon">⚠️</div><div class="tool-name">Vulnerability Assessment</div><div class="tool-cat">SECURITY TESTING</div></div>
-
-      <div class="tool-card"><div class="tool-icon">📊</div><div class="tool-name">Log Analysis</div><div class="tool-cat">SOC ANALYSIS</div></div>
-
-      <div class="tool-card"><div class="tool-icon">🚨</div><div class="tool-name">Incident Triage</div><div class="tool-cat">SOC OPERATIONS</div></div>
-
-      <div class="tool-card"><div class="tool-icon">📑</div><div class="tool-name">Vulnerability Reporting</div><div class="tool-cat">PROFESSIONAL SKILL</div></div>
+      <div class="tool-card"><div class="tool-icon">🐧</div><div class="tool-name">Linux</div><div class="tool-cat">OPERATING SYSTEM</div></div>
 
       <div class="tool-card"><div class="tool-icon">🐍</div><div class="tool-name">Python</div><div class="tool-cat">SCRIPTING</div></div>
 
@@ -937,6 +982,7 @@
 
   </div>
 </section>
+
 <section id="certs">
   <div class="container">
 
@@ -954,7 +1000,7 @@
         <div class="cert-info">
           <h4>Google – Foundations of Cybersecurity</h4>
           <p>Introductory cybersecurity certification covering security principles, threats, and defense fundamentals.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://www.coursera.org/account/accomplishments/verify/66S2BNTKL7QL" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -965,7 +1011,7 @@
         <div class="cert-info">
           <h4>Cisco – Junior Cybersecurity Analyst Career Path</h4>
           <p>Cisco cybersecurity program covering SOC operations, threat analysis, and incident response.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://www.credly.com/badges/bd7f391a-bec3-4bf9-a28b-d9c444c472a1/linked_in_profile" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -976,7 +1022,7 @@
         <div class="cert-info">
           <h4>AWS Academy – Cloud Foundations</h4>
           <p>Cloud computing fundamentals including AWS services, cloud architecture, and deployment models.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://www.credly.com/badges/d712fcac-4bbe-4998-9663-31fe71d6e29d/public_url" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -987,7 +1033,7 @@
         <div class="cert-info">
           <h4>HackerRank – Problem Solving (Intermediate)</h4>
           <p>Demonstrates problem solving skills using algorithms, data structures, and logical thinking.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://www.hackerrank.com/certificates/d62ab92a78a3" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -998,7 +1044,7 @@
         <div class="cert-info">
           <h4>Cisco – CCNA: Introduction to Networks</h4>
           <p>Networking fundamentals including IP addressing, routing, switching, and network protocols.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://www.credly.com/badges/9dfcdf4e-2255-4ca6-b362-2d20acf519d4/public_url" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -1009,7 +1055,7 @@
         <div class="cert-info">
           <h4>EC-Council – Certified Ethical Hacker (CEHv13)</h4>
           <p>Advanced ethical hacking certification covering penetration testing tools and attack methodologies.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://drive.google.com/file/d/1UNi4xDsdHXYWPIgM4MjQILv7saLGHVVX/view" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -1020,7 +1066,7 @@
         <div class="cert-info">
           <h4>TheSecOps – Certified Network Security Practitioner (CNSP)</h4>
           <p>Network security certification covering cryptography, threat detection, and defense mechanisms.</p>
-          <a href="#" target="_blank" class="cert-link">View Certificate</a>
+          <a href="https://candidate.speedexam.net/certificate.aspx?SSTATE=am4131EniU8ntjp4bO5mXXiDkHfN7QCwqabqBqi7JNC0qP2MIo5csXp2AhvIPRYTEapn6xmImH+vCaaHTCtA6dGLC6GgcUCRfdltTiYsiG4=" target="_blank" class="cert-link">View Certificate ↗</a>
           <div class="cert-status">● CERTIFIED</div>
         </div>
       </div>
@@ -1049,6 +1095,27 @@
   </div>
 </section>
 
+<section id="terminal">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag">// INTERACTIVE TERMINAL</span>
+      <h2 class="sec-title">COMMAND LINE</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="terminal-box">
+      <div id="terminal-output">
+        <p>Type <span class="cmd">help</span> to see available commands.</p>
+      </div>
+
+      <div class="terminal-input-line">
+        <span class="prompt">vishal@kali:~$</span>
+        <input type="text" id="terminal-input" autocomplete="off">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="container">
     <div class="sec-header reveal">
@@ -1059,13 +1126,13 @@
     <div class="contact-inner reveal">
       <p>Available for freelance pentesting engagements, SOC consulting, and security advisory roles. Drop a message — encrypted channels preferred.</p>
       <div class="contact-links">
-        <a href="mailto:you@email.com" class="contact-link">📧 EMAIL</a>
-        <a href="https://linkedin.com" class="contact-link" target="_blank">💼 LINKEDIN</a>
-        <a href="https://github.com" class="contact-link" target="_blank">💻 GITHUB</a>
-        <a href="https://tryhackme.com" class="contact-link" target="_blank">🎯 TRYHACKME</a>
-        <a href="https://hackthebox.com" class="contact-link" target="_blank">⬛ HACK THE BOX</a>
+        <a href="mailto:vshalrawal@gmail.com" class="contact-link">📧 EMAIL</a>
+        <a href="https://www.linkedin.com/in/vishal-rawat-22b788225/" class="contact-link" target="_blank">💼 LINKEDIN</a>
+        <a href="https://github.com/VishalRawatt/" class="contact-link" target="_blank">💻 GITHUB</a>
+        <a href="https://tryhackme.com/p/Dcypher" class="contact-link" target="_blank">🎯 TRYHACKME</a>
+        <a href="https://app.hackthebox.com/users/2285266" class="contact-link" target="_blank">⬛ HACK THE BOX</a>
       </div>
-      <a href="mailto:you@email.com" class="btn-primary">SEND ENCRYPTED MESSAGE</a>
+      <a href="mailto:vshalrawal@gmail.com" class="btn-primary">SEND ENCRYPTED MESSAGE</a>
     </div>
   </div>
 </section>
@@ -1118,11 +1185,93 @@ function countUp(el, target) {
   const step = Math.ceil(target / 60);
   const timer = setInterval(() => {
     count = Math.min(count + step, target);
-    el.textContent = count + '+';
+
+    if (el.dataset.plus === "false") {
+      el.textContent = count;
+    } else {
+      el.textContent = count + '+';
+    }
+
     if (count >= target) clearInterval(timer);
   }, 30);
 }
+document.addEventListener("DOMContentLoaded", function(){
 
+const input = document.getElementById("terminal-input");
+const output = document.getElementById("terminal-output");
+
+const commands = {
+
+help: `
+Available commands:
+whoami
+skills
+certs
+contact
+clear
+`,
+
+whoami: `
+Vishal Rawat
+Cybersecurity Analyst
+Specialized in Web Pentesting, Network Pentesting, SOC Operations and Active Directory Security.
+`,
+
+skills: `
+• Web Application Security
+• Network Pentesting
+• Active Directory Exploitation
+• SIEM & SOC Analysis
+• Python & Bash Automation
+`,
+
+certs: `
+CEH v13
+CNSP
+Google Cybersecurity
+AWS Cloud Foundations
+CySA+ (Pursuing)
+`,
+
+contact: `
+Email: vshalrawal@gmail.com
+LinkedIn: linkedin.com/in/vishal-rawat-22b788225
+GitHub: github.com/VishalRawatt
+TryHackMe: tryhackme.com/p/Dcypher
+`,
+
+clear: "clear"
+};
+
+input.addEventListener("keydown", function(e){
+
+if(e.key === "Enter"){
+
+const cmd = input.value.trim().toLowerCase();
+
+if(commands[cmd]){
+
+if(cmd === "clear"){
+output.innerHTML="";
+}
+else{
+output.innerHTML += `<p>> ${cmd}</p><pre>${commands[cmd]}</pre>`;
+}
+
+}else{
+
+output.innerHTML += `<p>> ${cmd}</p><p>Command not found. Type 'help'.</p>`;
+
+}
+
+input.value="";
+output.scrollTop = output.scrollHeight;
+
+}
+
+});
+
+});
 const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
