@@ -1187,6 +1187,10 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 reveals.forEach(r => observer.observe(r));
 
+document.querySelectorAll('.reveal').forEach(el => {
+  el.classList.add('visible');
+});
+
 function countUp(el, target) {
   let count = 0;
   const step = Math.ceil(target / 60);
