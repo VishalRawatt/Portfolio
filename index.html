@@ -157,13 +157,8 @@ font-size:14px;
     50% { opacity: 0.4; transform: scale(0.8); }
   }
 
-  section { position: relative; z-index: 2; }
-#active-directory,
-#tools,
-#certs{
-position:relative;
-z-index:2;
-}
+  section { position: relative; z-index: 1; }
+
   #hero {
     min-height: 100vh;
     display: flex;
@@ -482,13 +477,7 @@ z-index:2;
 
   #active-directory { padding: 7rem 0; }
 
-  #ad-grid{
-margin-bottom:0;
-}
-
-#active-directory{
-padding:5rem 0;
-}
+  
   .ad-hero {
     background: var(--bg3);
     border: 1px solid var(--border);
@@ -679,7 +668,12 @@ color: var(--cyan);
 
   footer span { color: var(--green); }
 
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal {
+opacity: 1;
+transform: translateY(0);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 768px) {
@@ -1191,10 +1185,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 reveals.forEach(r => observer.observe(r));
-
-document.querySelectorAll('.reveal').forEach(el => {
-  el.classList.add('visible');
-});
 
 function countUp(el, target) {
   let count = 0;
